@@ -39,7 +39,7 @@ def karatsuba_mult(a, b):
     a1, a0 = a[:len(a) // 2], a[len(a) // 2:]
     b1, b0 = b[:len(b) // 2], b[len(b) // 2:]
     z2 = karatsuba_mult(a1 * b1)
-    z0 = karatsuba_mult(a0, a1)
+    z0 = karatsuba_mult(a0, b0)
     z1 = karatsuba_mult((a0 + a1) * (b0 + b1)) - z0 - z2
     total_sum = int(z2 + '0' * len(a) // 2) + int(z1 + '0' * len(a) // 4) + z0
     return total_sum
