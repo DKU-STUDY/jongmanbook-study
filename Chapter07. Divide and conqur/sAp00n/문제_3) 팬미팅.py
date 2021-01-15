@@ -28,7 +28,7 @@ def kara(list_of_fan, list_of_members):
     z2 = kara(fan_list02, mem_list02)
     z0 = kara(fan_list01, mem_list01)
     z1 = kara(adder(fan_list01, fan_list02), adder(mem_list01, mem_list02))
-    result = adder(adder(z2 + [0] * len_of_list // 2, z1 + [0] * len_of_list // 4), z0)
+    result = adder(adder(z2 + [0] * (len_of_list // 2), z1 + [0] * (len_of_list // 4)), z0)
     return result
 
 
@@ -37,13 +37,18 @@ def sol():
     list_of_members = list_of_members[::-1]
     len_of_mem = len(list_of_members)
     list_of_fan = [1 if fan == 'M' else 0 for fan in stdin.readline().strip('\n')]
-
+    len_of_fan = len(list_of_fan)
     diff = len(list_of_fan) - len(list_of_members)
-    list_of_members = [1] * diff + list_of_members
+    list_of_members = [0] * diff + list_of_members
     result = kara(list_of_fan, list_of_members)
-    print(result[:])
+    result = result[len_of_mem - 1:len_of_fan]
+    counter = 0
+    for i in result:
+        if i == 0:
+            counter += 1
+    return counter
 
 
 C = int(stdin.readline())
 for _ in range(C):
-    sol()
+    print(sol())
