@@ -18,7 +18,7 @@ def computed_max(list_of_fence, left, right):
         return list_of_fence[left]
 
     mid_idx = (left + right) // 2
-
+    print(f'list: {list_of_fence[left:right]}     mid_idx: {mid_idx}')
     result = max(computed_max(list_of_fence, left, mid_idx), computed_max(list_of_fence, mid_idx + 1, right))
     lo, hi = mid_idx, mid_idx + 1
     height = min(list_of_fence[lo], list_of_fence[hi])
