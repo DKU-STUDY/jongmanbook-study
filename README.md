@@ -9,6 +9,6 @@
 - [x] Ch7.Divide and Qunquer
 
     2021.01.11 ~ 16 완료.
-- [ ] Ch.7 DP
+- [ ] Ch.8 DP
 
     2021.01.18 ~
